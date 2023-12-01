@@ -10,3 +10,10 @@ enum Enum {
     a: felt252,
     b: felt252
 }
+
+fn match_enum(enum: Enum) -> felt252 {
+  match enum {
+    Enum::a(x) => { x },
+    Enum::b(x) => { x },
+  }
+}
