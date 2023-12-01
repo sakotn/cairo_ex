@@ -26,3 +26,13 @@ fn fib_box(a: Box<felt252>, b: Box<felt252>, n: Box<felt252>) -> Box<felt252> {
         fib(b, BoxTrait::new(a.unbox() + b.unbox()), BoxTrait::new(unboxed_n - 1),)
     }
 }
+
+fn fib_match(n: felt252) -> felt252 {
+    match n {
+        1 => 1,
+        2 => 2,
+        3 => 3,
+        4 => 5,
+        _ => { 5 * fib(n - 4) + 3 * fib(n - 5) }
+    }
+}
